@@ -1,0 +1,26 @@
+
+Kullandýn mý ? 
+
+Kullandýysan hangilerini kullandýn ? 
+
+
+Inversion of Control (IoC)
+
+Ýhtiyac duyduðumuz nesnenin instance tutuyor :) 
+
+
+instance yaþam döngüsünü tutar 
+
+Ninject,
+Unity,
+Castle WÝNDSOR,
+Structure Map
+
+Hem köklü hemde araçalarýn iyi olmawsýndan dolayý Ninject iyi 
+
+Dry IoC,LightInject
+
+Peki bunlarý nasýl kullanýcaðýz ?
+
+
+

@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\bin\Debug\ValueAndReferenceTypes.exe.config
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\bin\Debug\ValueAndReferenceTypes.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\bin\Debug\ValueAndReferenceTypes.pdb
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\obj\Debug\ValueAndReferenceTypes.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\obj\Debug\ValueAndReferenceTypes.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\obj\Debug\ValueAndReferenceTypes.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\obj\Debug\ValueAndReferenceTypes.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\ValueAndReferenceTypes\obj\Debug\ValueAndReferenceTypes.pdb

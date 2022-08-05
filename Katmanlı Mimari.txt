@@ -1,0 +1,42 @@
+Katmanlý Mimari Nedir ?
+
+Hiç Katmanlý Mimari de Bulundun mu ? 
+
+Yazýlým da belirli katmanlarýn oluþturulmasýdýr.Bu katmanlý mimarilerde kod yazýlmasý lazýmdýr.
+
+DATA ACCESS KATMANI 
+-------------------
+DB ile etkileþim kuran katmandýr. Sadece ve sadece yapýlan operasyonlar çok nettir.
+ 
+ Select,Delete Truncate,Drop,Insert  bu katmanda yazýlýr.
+
+ BUSÝNESS KATMANI
+ ----------------
+
+ Bir iþ katmanýdýr.Data Access ile iletiþim halindedir. Karar katmaný business'dir.
+
+
+ UI - ARAYUZ (.NET ,Windows Form)
+ --------------------------------
+
+ Bu katmanda arayüzü ilgilendiren koddur. Kullanýcýdan bir þeyler alýp birþeyler veren katmandýr.
+
+ Business katmaný ile iletiþim halindedir.Business olumlu ve olumsuz dönüþ yapar bize.
+
+ Neden kullanýyoruz.
+
+ Mesela diyelim ki web form ile yazdýk ve bütün iþlemleri UI kýsmýnda yazdýk ilerleyen zamanlarda .Net veya .Net Core geçirdiðimiz zaman bütün iþlemleri tekrar yazmak zorunda kalýcaktýk.
+ 
+ Fakat katmanlý mimari kullansaydýk sadece .Net tarafý eklenip deðiþicekti yani business ve data access de yaptýðýmýz hiç bir iþlemi tekrar yapmamýza gerek kalmýcak.
+ 
+ YARDIMCI KATMANLAR
+ ------------------
+
+
+ SERVÝCE KATMANI
+ ---------------
+
+ Diyelim ki yeni arayüz eklediðmiz de öçrneðin angularda bunun anlýcaðý bir RESTFUL sistem gerekli bunu servisle görüþtürürüz.
+
+ WebApi populer servistir.
+ 

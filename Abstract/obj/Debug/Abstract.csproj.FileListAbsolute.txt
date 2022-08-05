@@ -1,0 +1,8 @@
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\bin\Debug\Abstract.exe.config
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\bin\Debug\Abstract.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\bin\Debug\Abstract.pdb
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\obj\Debug\Abstract.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\obj\Debug\Abstract.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\obj\Debug\Abstract.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\obj\Debug\Abstract.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\Abstract\obj\Debug\Abstract.pdb

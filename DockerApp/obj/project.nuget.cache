@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6m63VlozGHgIAIrinUAtTqyBrb+KK3uL5qsEuvYNnlfKU4dYcSbmzVP8/C0P7fPXDguqv9dvxXSmYWOjYCgt1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\User\\source\\repos\\Btk.Akademi.Mul\\DockerApp\\DockerApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}

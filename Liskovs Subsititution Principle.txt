@@ -1,0 +1,141 @@
+Ýþletmenin 2 tipi müþterisi var 
+
+Þirketi Ünvaný var
+Kiþinin Ýsmi var
+
+
+
+ Ad			  Soyad  
+-----		 -------
+Deniz		Tanrýverdi
+ÝþBankasý		X
+
+
+soyad Null olabilir dediðimiz de ilerleyen zamanlarda soyadý null olan müþterilerimiz olur
+
+
+
+Ortak bir tablo yapýlýr
+
+
+ MÜÞTERÝ         Bireysel Müþteri : MÜÞTERÝ			Kurumsal Müþteri : MÜÞTERÝ 
+---------			-----------------					-------------------
+
+
+
+
+Sýrf ayný özelliklere sahip diye ayný çatý altýnda toplarsak Liskovs Subsitition prensibini ezmiþ oluyoruz.
+
+
+interface IUcak
+{
+    bool KesifYap();
+    bool HedefiVur();
+}
+ 
+class UcakA : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakA Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakA keþfi tamamladý.");
+        return true;
+    }
+}
+class UcakB : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakB Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakB keþfi tamamladý.");
+        return true;
+    }
+}
+class UcakC : IUcak
+{
+    public bool HedefiVur()
+    {
+        Console.WriteLine("UcakC Hedefi vurdu.");
+        return true;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakC keþfi tamamladý.");
+        return true;
+    }
+}
+ 
+class Savas
+{
+    List<IUcak> Ucaklar;
+    public Savas(List<IUcak> Ucaklar)
+    {
+        this.Ucaklar = Ucaklar;
+    }
+ 
+    public void KesifYap()
+    {
+        Ucaklar.ForEach(u =>
+        {
+            u.KesifYap();
+        });
+    }
+ 
+    public void HedefiVur()
+    {
+        Ucaklar.ForEach(u =>
+        {
+            u.HedefiVur();
+        });
+    }
+}
+
+
+Varsayalým ki, ordumuza yeni bir uçak daha geldi ama sadece keþfe çýkabilmektedir.
+
+class UcakD : IUcak
+{
+    public bool HedefiVur()
+    {
+        return false;
+    }
+    public bool KesifYap()
+    {
+        Console.WriteLine("UcakD keþfi tamamladý.");
+        return true;
+    }
+}
+
+Yeni uçaðýmýzýn hedefi vurma özelliði yoktur. Lakin IUcak arayüzümüz tüm elemanlarý zorla uygulatmaktadýr. Eee haliyle base class var olan HedefiVur metodunu derived classta kullanmayacaðýz.
+Ýþte yeni uçaðýmýz(UcakD) için burada HedefiVur metodu Dummy Code yapýsýndadýr.
+
+Peki “HedefiVur” metodunu UcakD’de kullanmayacaksak aþaðýdaki gibi önlem almalýyýz.
+
+
+class Savas
+{
+    .
+    .
+    .
+    public void HedefiVur(
+    {
+        Ucaklar.ForEach(u =>
+        {
+            if (!(u is UcakD))
+            {
+                u.HedefiVur();
+            }
+        });
+    }
+}
+
+ Asýl mevzu LSP’yi ilgilendiren base classtaki kullanýlmayacak kodu derived class’a zorla implement etmektir. Haliyle LSP’ye aykýrý olan bu durum OCP‘ye de aykýrýdýr. 
+ Çünkü her yeni gelen ve hedefi vuramayan uçakta “Savas” sýnýfý içerisinde yeni if – else bloklarýyla kontrol saðlamýz gerekecektir. Buda deðiþiklik demektir.

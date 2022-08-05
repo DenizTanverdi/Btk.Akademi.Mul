@@ -1,0 +1,51 @@
+interface ITank
+{
+    bool AtesEt();
+    bool HareketEt();
+    double DusmanIleMesafeOlc();
+}
+class Tank1 : ITank
+{
+    public bool AtesEt() => true;
+    public double DusmanIleMesafeOlc()
+    {
+        //Mesafa ölçme iþlemleri
+        return 100;
+    }
+    public bool HareketEt() => true;
+}
+class Tank2 : ITank
+{
+    public bool AtesEt()
+    {
+        //Tank2'nin ateþ etme özelliði yoktur!
+        return false;
+    }
+    public double DusmanIleMesafeOlc()
+    {
+        //Mesafa ölçme iþlemleri
+        return 230;
+    }
+    public bool HareketEt() => true;
+}
+class Tank3 : ITank
+{
+    public bool AtesEt() => true;
+    public double DusmanIleMesafeOlc()
+    {
+        //Tank3'ün mesafa ölçme özelliði yoktur!
+        return -1;
+    }
+    public bool HareketEt() => true;
+}
+
+
+Evet, gördüðünüz gibi tek bir Interface ile elimizdeki tanklarýn özelliklerini þablonize ettik.
+Lakin, “Tank2” isimli tankýmýzýn ateþ etme özelliðinin olmadýðýný ve “Tank3” isimli tankýmýzýn ise düþman ile 
+mesafe ölçme yeteneði olmadýðýný varsayarsak bundan dolayý “Tank2” için “AtesEt” ve “Tank3” için “DusmanIleMesafeOlc” isimli metodlar iþlevsiz kalacaktýr.
+
+Alýn size Dummy Code(Sahte Kod) durumu.
+
+Ýþte böyle bir durumda ilgili metodlarý farklý Interface’lere alarak daha doðrusu ‘arayüzleri ayýrarak’ bu soruna çözüm bulabiliriz.
+
+interfacelerin doðru parçalara ayýrmasýdýr.

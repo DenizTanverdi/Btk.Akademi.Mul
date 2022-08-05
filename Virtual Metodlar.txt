@@ -1,0 +1,8 @@
+Virtual bazý yerlerde deðiþiklik gösterbilir.
+
+
+Temel sýnýftan türetilmiþ sýnýflara aktarýlan metotlarý her zaman olduðu gibi kullanmak istemeyebiliriz. 
+Bu metotlarý türetilmiþ sýnýfýn içerisinden yeniden tanýmlayabilmek için virtual ve override anahtar sözcüklerini kullanýrýz.
+
+Virtual metotlar Inheritance (Kalýtým) yoluyla aktarýldýklarý sýnýflarýn içerisinden override edilerek deðiþtirilebilirler. 
+Eðer override edilmezlerse temel sýnýf içerisinde tanýmladýklarý þekilde çalýþýrlar.

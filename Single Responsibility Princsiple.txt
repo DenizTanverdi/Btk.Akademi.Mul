@@ -1,0 +1,65 @@
+
+/*Business kodu business da yazýlýr.Interface de deðil  herkesin bir görevi herkes o görevi yapmakla hükümlüdür.*/
+
+Single responsibility prensibi sýnýflarýmýzýn iyi tanýmlanmýþ tek bir sorumluluðu olmasý gerektiðini anlatmaktadýr. Bir sýnýf (nesne) yalnýzca bir amaç uðruna deðiþtirilebilir, 
+o amaçta o sýnýfa yüklenen sorumluluktur, yani bir sýnýfýn yapmasý gereken yalnýzca bir iþi olmasý gerekir.
+
+Eðer geliþtirdiðiniz sýnýf ya da fonksiyon birden fazla amaca hizmet ediyorsa, bu kurala aykýrý bir geliþtirme sürecinde olduðunuz anlamýna geliyor. 
+Bunu farkettiðinizde amaçlara uygun olarak parçalamanýz gerekmektedir.
+
+Gereksinimler deðiþtiðinde, yazýlan kodda da deðiþmesi gereken kýsýmlar olacaktýr. Bu da yazýlan sýnýflarýn(nesnelerin) bir kýsmýnýn ya da tamamýnýn deðiþtirilmesi anlamýna gelir.
+Bir sýnýf ne kadar fazla sorumluluk alýrsa, o kadar fazla deðiþime uðramak zorunda kalýr. Böylece birçok kod parçasýnýn deðiþmesine neden olurken, yeniden yazýmda; deðiþikliklerin 
+uygulanmasý da bir o kadar zorlaþýr.
+
+Bir sýnýfý veya fonksiyonu geliþtirdiðimizde sorumluluðunu ya da amacýný iyi belirleyip, sýnýfý ona göre tasarlamamýz gerekir, böylece oluþabilecek herhangi bir deðiþimden, 
+olabildiðince az þeyi güncelleyerek ve düzelterek istenilen geliþtirmeyi gerçekleþtirmiþ oluruz. Sorumluluðun azaltýlmasý demek deðiþime daha kolay adapte olmak demektir.
+
+Test — Bir sorumluluðu olan bir sýnýfta çok daha az sayýda test-case olacaktýr.
+
+Daha az baðýmlýlýk — Tek bir sýnýfta daha tek bir sorumluluðunun olmasý daha az baðýmlýlýk saðlayacaktýr.
+
+Yalýn ve anlaþýlýr yapýlar — Daha az sorumluluk daha yalýn veya küçük yapýlar ulaþmasýný saðlar. Daha küçük yapýlar ise monolitik yapýlara göre çok daha avantajlýdýr ve 
+kod anlaþýlýrlýðýný/okunurluðunu artýrýr.
+
+class AlisVeris
+{
+    public double UrunFiyati { get; set; }
+    public bool LimitYeterliMi()
+    {
+        .
+        .
+        .
+        return true;
+    }
+    public bool AlisVerisTamamla()
+    {
+        .
+        .
+        .
+        return true;
+    }
+}
+
+Evet, gördüðünüz gibi bu iki iþlemi tek bir sýnýf içerisinde yaparak SRP’yi çiðnemiþ olduk. 
+Çünkü limit kontrolü ile aliþveriþi tamamlama iþlemleri birbirlerinden farklý iþlemlerdir. Yapmamýz gereken bu iþlemlere özel sýnýflar oluþturmaktýr.
+
+class LimitKontrol
+{
+    public bool LimitYeterliMi()
+    {
+        return true;
+    }
+}
+ 
+class AlisVerisYapici
+{
+    public bool AlisVerisTamamla()
+    {
+        return true;
+    }
+}
+ 
+class AlisVeris
+{
+    public double UrunFiyati { get; set; }
+}

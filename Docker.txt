@@ -1,0 +1,36 @@
+Docker nedir ? 
+
+Docker, yazýlým geliþtiriciler ve sistemciler için geliþtirilen açýk kaynaklý bir sanallaþtýrma platformudur. 
+
+Docker ile Linux, Windows ve MacOSX üzerinde Linux ve Windows sanal containerler(makineler) çalýþtýrabilirsiniz. 
+
+Bu platform sayesinde web sistemlerinin kurulumunu, testini ve daðýtýmýný kolaylýkla gerçekleþtirebilirsiniz. 
+
+En önemli özelliði belki de "Benim bilgisayarýmda çalýþýyordu, sunucuda neden çalýþmadý acaba?" sorununu ortadan kaldýrýyor olmasý.
+
+Docker, yazýlýmlarýn kurulmuþ halinin imajýný (.iso DVD imajý gibi) alýp tekrar kullanýlabilir hale getiriyor. 
+
+Ýsterseniz bu imajý bir kere oluþturup istediðiniz sunuculara gönderirsiniz, isterseniz her sunucuda sýfýrdan imaj oluþturursunuz.
+
+Dockerfile adý verilen talimat dosyalarýna bakarak her sunucu ayný imajý yeniden inþa edebilir. Bu sayede manuel müdahaleye gerek kalmaz.
+
+Bir diðer güzel özelliði ise Dockerfile ve imajlarýn geliþtirilebilir olmasý. 
+
+Talimatlara birkaç adým daha eklemek isterseniz önceki komutlarý tekrardan vermek yerine kaldýðý en son yerden devam ediyor. Bu da zaman kazandýrýyor.
+
+
+Dockerfile özetle 2 ana bölümden oluþur. Birincisi uygulamayý build etme ikincisi ise uygulamayý run etme bölümleridir. Dosya içerisindeki komutlarýn ne olduðuna bakacak olursak;
+
+1 FROM proje hangi kütüphane de kullanýldýysa base image’ýn belirtildiði kýsým. Bu projemizde dotnetcore 2.2 SDK image’ini kullanacaðýz.
+
+2 WORKDIR Projemiz dosyalarýný docker container’ýn da hangi klasörün altýna kopyalayacaðýný belirttiðimiz kýsýmdýr.
+
+3 COPY proje dosyalarýný local file system’dan image’e kopyalamak için kullanýlan komuttur. 
+Bizde projemizde ilk olarak csproj dosyasýný kopyalayýp restore edeceðiz, sonra bütün bu oluþan dosyalarý yeniden kopyalayýp dotnet publish komutu çalýþtýrarak uygulamamýzý
+oluþturacaðýz.
+
+4 RUN: Docker containerlarý hazýrlanacaðý sýrada çalýþmasý gereken komutlar için kullanýlýr.
+Ýlk olarak build alýnmasýný daha sonrasýnda ise publish edilmesi saðlanýr.
+
+5 ENTRYPOINT container ayaða kaldýrýlýrken ilk olarak çalýþacak olan komut ve parametreleri belirttiðimiz komuttur. 
+Container run edilirken dotnet komutuyla DockerExample.dll’i execute edilecektir.

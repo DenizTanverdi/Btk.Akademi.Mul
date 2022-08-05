@@ -1,0 +1,103 @@
+Yeni özellik ekleme açýk ama deðiþime kapalý olan prensip türüdür.
+
+OCP prensibi,
+
+“sýnýflar geliþmeye açýk lakin deðiþmeye kapalý olmalýdýr”
+
+demektedir. Deðiþime kapalýdan kasýt, kodda gereksiz yerlerin deðiþtirilmesidir.
+
+class AIslemi
+{
+    public bool Islem() { Console.WriteLine("AIslemi"); return true; }
+}
+class BIslemi
+{
+    public bool Islem() { Console.WriteLine("BIslemi"); return true; }
+}
+class CIslemi
+{
+    public bool Islem() { Console.WriteLine("CIslemi"); return true; }
+}
+enum IslemTipi
+{
+    AIslemi,
+    BIslemi,
+    CIslemi
+}
+ 
+class IslemYapici
+{
+    AIslemi aIslemi;
+    BIslemi bIslemi;
+    CIslemi cIslemi;
+ 
+    public IslemYapici()
+    {
+        aIslemi = new AIslemi();
+        bIslemi = new BIslemi();
+        cIslemi = new CIslemi();
+    }
+ 
+    public void IslemiYap(IslemTipi islemTipi)
+    {
+        switch (islemTipi)
+        {
+            case IslemTipi.AIslemi:
+                aIslemi.Islem();
+                break;
+            case IslemTipi.BIslemi:
+                bIslemi.Islem();
+                break;
+            case IslemTipi.CIslemi:
+                cIslemi.Islem();
+                break;
+        }
+    }
+}
+
+Yukarýdaki örnek kod bloðunu ele alalým. “IslemYapici” sýnýfýmýz “AIslemi”, 
+“BIslemi” ve “CIslemi” sýnýflarýný bu þekilde kullanýrsa eðer yeni bir “DIslemi” söz konusu olduðunda “IslemYapici” sýnýfýn deðiþtirilmesi gerekecektir.
+Bu tarz bir tasarým baðýmlýlýlardan dolayý hatalýdýr. Doðal olarak OCP’ye de aykýrýdýr.
+
+Ýþte bu tarz bir durumda aþaðýdaki gibi bir tasarým OCP’ye uygun bir yaklaþým olacaktýr ve yeni ekleme sonucunda bir tek gerekli olan sýnýf inþa edilecek 
+lakin “IslemYapici” sýnýf deðiþtirilmeyecektir.
+
+interface Islem
+{
+    bool Islem();
+}
+class AIslemi : Islem
+{
+    public bool Islem() { Console.WriteLine("AIslemi"); return true; }
+}
+class BIslemi : Islem
+{
+    public bool Islem() { Console.WriteLine("BIslemi"); return true; }
+}
+class CIslemi : Islem
+{
+    public bool Islem() { Console.WriteLine("CIslemi"); return true; }
+}
+class IslemYapici
+{
+    Islem islem;
+ 
+    public IslemYapici(Islem islem)
+    {
+        this.islem = islem;
+    }
+ 
+    public void IslemiYap()
+    {
+        islem.Islem();
+    }
+}
+Gördüðünüz gibi “IslemYapici” sýnýfýmýzda yaptýðýmýz her yeni entegrasyonda ilgili sýnýf hangi tipin verildiðiyle ilgilenmeyecek,
+
+doðal olarak baðýmlýlýk minimize edilmiþ olacaktýr. Arayüz sayesinde bu iþlemi gerçekleþtirmekteyiz. 
+
+Ýþte bu arayüz sayesinde sýnýfýmýzý geniþletmiþ oluyor, deðiþikliði önlemiþ oluyoruz.
+
+Bu prensip(OCP) sayesinde 2 günde yapýlan iþi 3 günde deðiþtirmek zorunda kalmaktan kurtuluyoruz.
+
+

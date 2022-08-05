@@ -1,0 +1,3 @@
+
+Framework uygulama çatýsýdýr.Yani biz uygulamamýzý o çatýda geliþtiririz. MvC , Angular 
+Library ise Jquery'dir. Saf javascript kullanarak olusturulmuþ bir kütüphanedir. Kodlar ve methodlar topluluðudur.

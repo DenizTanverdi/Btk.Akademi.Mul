@@ -1,0 +1,16 @@
+Solid en basit haliyle sürdürebilirliði saðlamaktýr. Peki sürdürebilirlik nedir ? 
+
+
+Yazýlým günlük aktivileri bilgisayar sistemine getirebilirmesidir.
+
+Ýkametgah örneði mesela ? 
+
+Yazýlým bir kere yap bitti deðildir.Daha iyi haline getirmemiz gerekiyor 
+
+5 temel Solid Prensibi vardýr.
+
+1- Single  Repsonsibility
+2- Open Closed
+3- Liskov's Subsititution
+4- Interface Segregation
+5-Dependency Inversion

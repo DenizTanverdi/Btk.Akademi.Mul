@@ -1,0 +1,33 @@
+Elimizdeki datayý kullanmak isteyen baþka kurumlar var.
+
+
+
+	  Banka
+-----------------------
+
+JAVA ÝLE GELÝÞTÝRME YAPIYOR
+|
+|
+|
+|
+|
+|
+| XML WEB SERVÝS 
+|																		 WCF - SOAP  ------XML Web servisler -----TCP/ÝP iletiþimi saðlar
+|																							---------------------
+|
+|
+|
+|
+Client					Client 1				Client 2
+-------					---------				----------
+ .NET
+
+
+
+Ýletiþim saðlar.
+
+Farklý uygulamalarla iletiþimi saðlamak.
+
+
+

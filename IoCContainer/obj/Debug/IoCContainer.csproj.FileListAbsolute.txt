@@ -1,0 +1,11 @@
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\bin\Debug\IoCContainer.exe.config
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\bin\Debug\IoCContainer.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\bin\Debug\IoCContainer.pdb
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\bin\Debug\Ninject.dll
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\bin\Debug\Ninject.xml
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.csproj.CopyComplete
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.exe
+C:\Users\User\source\repos\Btk.Akademi.Mul\IoCContainer\obj\Debug\IoCContainer.pdb

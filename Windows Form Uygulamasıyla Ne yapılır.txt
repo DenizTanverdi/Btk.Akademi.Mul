@@ -1,0 +1,4 @@
+Event bazlý sistemle çalýþýr.
+
+Zamanla yerini WPF býraktý.
+

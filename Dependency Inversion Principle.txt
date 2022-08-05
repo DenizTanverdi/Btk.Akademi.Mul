@@ -1,0 +1,74 @@
+***** Mülakatlarda en çok sorulan konu *****
+
+Bu prensip yüksek sýnýflarýn düþük sýnýflarýn soyut haliyle kullanýlmasýdýr. Bu da baðýmlýlýðý azaltýyor.
+
+
+
+Ýçeriðimize böyle bir giriþ yapmayý uygun gördüm. Bunun sebebi, tasarladýðýmýz kodun baðýmlýlýðý implementation(uygulama)
+Class’lara deðil, Interface’lere olmasý gerektiðini makalemizin baþýnda vurgulamaktýr.
+
+Daha açýk bir þekilde ifade etmek gerekirse, üst seviye sýnýflar alt seviye sýnýf implementasyonlarýný deðil Interface uygulamalarýný kullanmalýdýrlar.
+
+Neden mi?
+Üst seviyeli iþlem yapan sýnýflar(High Level Class – Yüksek Dereceli Sýnýf),
+alt seviyeli iþlem yapan sýnýflara(Low Level Class – Düþük Dereceli Sýnýf) baðýmlý olmaktadýrlar. 
+Bir baþka açýdan bakarsak, üst seviyeli iþlem yapan metodlar, alt seviyeli iþlem yapan metodlarý kullanmaktadýrlar. 
+Haliyle alt seviye metodlarda olasý her deðiþiklik üst seviye metodlarda deðiþikliðe sebep olmasý üst seviyenin alt seviyeye baðýmlýlýðýný göstermektedir. 
+Haliyle DIP bize bu baðýmlýlýðýn ters çevrilmesini prensip edinmemizi önermektedir.
+
+
+class Imalat
+{
+    //High Level Class
+    public void Olustur()
+    {
+        Kek kek = new Kek();
+        kek.KekYap(true);
+    }
+}
+ 
+class Kek
+{
+    //Low Level Class
+    public void KekYap(bool Kakao)
+    {
+        //Process
+    }
+}
+
+Yukarýdaki “Imalat” sýnýfý içerisindeki “Olustur” metodu, “Kek” sýnýfý içerisindeki “KekYap” isimli metoda baðýmlýdýr. 
+Bunun sebebi “KekYap”‘ýn “Olustur” içerisinde kullanýlmasýdýr.
+Ýlgili metotda yapýlacak tüm deðiþiklikler “Olustur” içerisinde de deðiþiklik gerektirecektir.
+
+interface IGida
+{
+    void Yap(bool Kakao);
+}
+ 
+class Imalat
+{
+    //High Level Class
+    IGida gida;
+    public Imalat()
+    {
+        gida = new Kek();
+    }
+    public void Olustur()
+    {
+        gida.Yap(true);
+    }
+}
+ 
+class Kek : IGida
+{
+    //Low Level Method
+    public void Yap(bool Kakao)
+    {
+        //Process
+    }
+}
+
+Dikkat ederseniz yaptýðýmýz iþlem neticesinde alt seviye sýnýfýmýzý 
+Interface sayesinde soyutlaþtýrarak, üst seviye sýnýfýmýzda alt seviye sýnýfýna dair olan baðýmlýlýðý tersine çevirmiþ bulunmaktayýz.
+Yani gördüðünüz gibi alt seviye sýnýfýmýz, Interface’e baðýmlý bir hale gelmiþtir.
+Ee ilgili Interface’de üst seviye sýnýf tarafýndan refere edildiðinden dolaylý yoldan baðýmlýlýk alt seviyeden üst seviyeye doðru olmuþtur diyebiliriz.
